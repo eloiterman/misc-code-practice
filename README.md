@@ -10,6 +10,6 @@ coding practice -basic stuff
  -reverse words
  -check if it's a palendrome
  
- -practice with objects adn arrays 
+ -practice with objects and arrays 
  
  The "tech_test_master" was a take home test for a job that took me time to complete  for further reference and practice as needed. 
