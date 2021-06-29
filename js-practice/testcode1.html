@@ -1,0 +1,295 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+<script>
+
+var string1 ="test";
+var object1 ={'name':'phone'}
+var arr1 = [3,5,9,111]
+  
+
+var testStr= Array.isArray(string1);
+var testObj=Array.isArray(object1);
+var testArr=Array.isArray(arr1);
+  
+  //console.log(testStr);
+  //console.log(testObj);
+  //console.log(testArr);
+
+  //document.getElementById("demo").innerHTML = 'string '+ testStr+'<hr>' 
+  //console.log(array2.length);
+
+var array2=[0,1,2,3,4,5,6];
+var array3=["a","b","c"];
+//alert(array3[2]);
+//console.log(array2.length);
+
+
+for(i= 0; i<array2.length; i++){
+	
+		//console.log(array2[i]);
+  		}
+
+
+
+//console.log(array3);
+//console.log(array3[2]);
+
+/*
+document.addEventListener('DOMContentLoaded', function() {
+  
+  let app = document.getElementById('todo-app');
+  
+
+  app.addEventListener('click', function(e) {
+    if (e.target && e.target.nodeName === 'LI') {
+      let item = e.target;
+      alert('you clicked on item: ' + item.innerHTML);
+    }
+  });
+  
+});
+	
+$( document ).ready(function() {
+
+
+	
+
+	$('#todo-app2 .item2').on("click", function(){
+			alert('you clicked on item: '+ $(this).text());
+		});
+
+});*/
+/*use let not var */
+const arr = [10, 12, 15, 21];
+for (let i = 0; i < arr.length; i++) {
+	
+ setTimeout(function() {
+    console.log('The index of this number is: ' + i);
+ }, 3000);
+}
+
+
+
+/*or ES6 let syntax*/
+  // pass in the variable i so that each function 
+  // has access to the correct index
+/*for (var i = 0; i < arr.length; i++) {
+
+  setTimeout(function(i_local) {
+    return function() {
+      console.log('The index of this number is: ' + i_local);
+    }
+  }(i), 3000);
+}*/
+
+var array6 = ['This',1,'Time'];
+
+var string6 = array6.toString();
+//document.getElementById("output6").innerHTML = 'String :'//+ string6;
+
+
+var array7 = [1,2,3,4,5,6,7,8,9];
+ console.log('String 6 :'+ string6);
+
+window.onload = function(){
+    document.getElementById("test1").innerHTML = 'String :'+ string6;
+}
+
+var myword= prompt("any word can be reversed with js");
+//can we detect palendromes?
+
+
+
+
+
+
+
+function reverseString(str) {
+    // Step 1. Use the split() method to return a new array
+    //var splitString = str.split(""); // var splitString = "hello".split("");
+    // ["h", "e", "l", "l", "o"]
+ 
+    // Step 2. Use the reverse() method to reverse the new created array
+    //var reverseArray = splitString.reverse(); // var reverseArray = ["h", "e", "l", "l", "o"].reverse();
+    // ["o", "l", "l", "e", "h"]
+ 
+    // Step 3. Use the join() method to join all elements of the array into a string
+    //var joinArray = reverseArray.join(""); // var joinArray = ["o", "l", "l", "e", "h"].join("");
+    // "olleh"
+    
+    //Step 4. Return the reversed string
+   // return joinArray; // "olleh"
+
+
+
+    //or chain it:
+        
+        // built in functions
+    //return str.split("").reverse().join("");THIS WORKS WITH ONE LINE
+
+
+//loop solution
+/* var newString = "";
+    for (var i = str.length - 1; i >= 0; i--) { 
+        newString += str[i]; // or newString = newString + str[i];
+    }
+    return newString;*/
+//recursion (will call itself without a loop)
+      if (str === "") // This is the terminal(base) case that will end the recursion
+    return "";
+  
+  else
+    return reverseString(str.substr(1)) + str.charAt(0);
+
+}
+ 
+function palindrome(str) {
+  //var re = /[\W_]/g;
+  //var lowRegStr = str.toLowerCase().replace(re, '');
+  //var reverseStr = lowRegStr.split('').reverse().join(''); 
+ // return reverseStr === lowRegStr;
+
+ //with a for loop same thing different solution:
+
+  var re = /[^A-Za-z0-9]/g;
+ str = str.toLowerCase().replace(re, '');
+ var len = str.length;
+ for (var i = 0; i < len/2; i++) {
+   if (str[i] !== str[len - 1 - i]) {
+       return false;
+   }
+ }
+ return true;
+}
+
+
+
+var pal =palindrome(myword);
+
+
+
+var reversed=reverseString(myword);
+//console.log(pal);
+if (pal){alert("Smart ass, you entered a palendrome so the word will be unchnaged bet you didn't think I would notice eh?")}
+
+
+window.onload = function(){
+  
+
+    document.getElementById("output6").innerHTML = 'String :' + reversed;
+    //console.log(reverseString("hello"));
+}
+
+
+
+//https://www.quora.com/What-are-the-most-important-string-manipulation-questions-every-Computer-Science-student-should-know
+//https://www.youtube.com/watch?v=nAWVYFEzoY8
+//JavaScript Arrays: Properties, Methods, and Manipulation (Part 1 of 7)
+
+//count the number of times a letter occurs
+function char_count(str, letter) 
+{
+ var letter_Count = 0;
+ for (var position = 0; position < str.length; position++) 
+ {
+    if (str.charAt(position) == letter) 
+      {
+      letter_Count += 1;
+      }
+  }
+  return letter_Count;
+  //console.log(letter_Count)
+}
+
+console.log("found a duplicate letter in" +"booo " +char_count('booo', 'o') +"times");
+
+//word count?
+
+/*
+function WordCount(str) { 
+  return str.split(" ").length;
+}
+
+console.log(WordCount("hello world"));
+*/
+
+//occurence of a word:
+//https://stackoverflow.com/questions/4009756/how-to-count-string-occurrence-in-string
+
+
+var temp = "was not was.";
+var array = temp.split("was");
+var occurrenceCount = array.length - 1;
+
+//or alert("This is a string.".split("is").length - 1);
+alert("in the sentance "+temp+" a word was was used "+occurrenceCount+" times"); //should output '2'
+</script>
+
+
+</head>
+
+
+<body>
+
+<div id="test1">---</div>
+
+
+	<div id="output6">---</div>
+<!--<h1> Comparing vanilla Js with jQuery </h1>
+Use this code :
+
+<pre>
+ document.addEventListener('DOMContentLoaded', function() {
+  
+  let app = document.getElementById('todo-app');
+  
+  app.addEventListener('click', function(e) {
+    if (e.target && e.target.nodeName === 'LI') {
+      let item = e.target;
+      alert('you clicked on item: ' + item.innerHTML);
+    }
+  });
+  
+});
+</pre>
+
+
+	<h2>vanilla js is doing this</h2>
+<ul id="todo-app">
+  <li class="item">Walk the dog</li>
+  <li class="item">Pay bills</li>
+  <li class="item">Make dinner</li>
+  <li class="item">Code for one hour</li>
+</ul>
+<hr>
+
+
+
+	<h2>jQuery is doing this</h2>
+<pre>
+$( document ).ready(function() {
+		$('#todo-app2 .item2').on("click", function(){
+		alert('you clicked on item: '+ $(this).text());
+		});
+})	
+
+
+</pre>
+
+
+<ul id="todo-app2">
+  <li class="item2">Walk the dog</li>
+  <li class="item2">Pay bills</li>
+  <li class="item2">Make dinner</li>
+  <li class="item2"> Code for one hour</li>
+</ul>
+
+and, like ...WOW 6 lines of code becomes 2 lines that are easy to understand <br>
+thr trouble is, you won't pass a code test if you can't solve a typical code question on a test that calls for ONLY pure js and if you fail it, the assumption is you can't code or your a fraud
+-->
+</body>
+</html>

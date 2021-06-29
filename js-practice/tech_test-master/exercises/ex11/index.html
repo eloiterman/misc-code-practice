@@ -1,0 +1,138 @@
+<!--
+Instructions:
+	- Write a javascript program that will, on click of a button, trigger the sliding of a <div/> in, perform an animation (you are free to choose any. Minimum requirement: one delayed animation) before sliding out again.
+
+Note:
+	- You are allowed to use native Javascript, Jquery and animate.css
+
+ -->
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+
+body{font-family:arial;}
+.godzilla,.bambi,.sicko{
+	width:500px;height:500px;
+	 position:absolute;
+	 top:0px;left:0px;
+
+
+}
+
+.godzilla{
+ 	background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index:100;
+    background-color:pink;
+
+}
+.sicko,.PSA{ z-index:275;font-size:150px;text-align:center;}
+.sicko{font-size:150px;
+text-shadow: 0px 0px 10px #FFFFFF;
+color:#b30000;
+   background-color:blue;
+}
+.PSA{font-size:30px;position:relative;z-index:300;}
+.bambi{
+
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index:50;
+}
+
+#button{
+	    width: 50px;
+    height: 15px;
+    background-color: green;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius:5px;
+    position:relative;
+    top:500px;
+
+    cursor:pointer;
+
+      -o-transition:color .2s ease-out, background 1s ease-in;
+  -ms-transition:color .2s ease-out, background 1s ease-in;
+  -moz-transition:color .2s ease-out, background 1s ease-in;
+  -webkit-transition:color .2s ease-out, background 1s ease-in;
+
+
+}
+#button:hover{background-color:red}
+
+</style>
+
+
+<script>
+$( document ).ready(function() {
+$(".godzilla,.sicko,.PSA").hide();
+$
+		$( "#button").click(function() {
+		//delay slide in 
+
+$(".godzilla").slideDown();
+
+//console.log("bambi get's stepped on");
+
+//slide up 
+setTimeout(function() {
+   $(".sicko").fadeIn();
+}, 300);
+
+setTimeout(function() {
+   $(".sicko").fadeOut();
+}, 2500);		
+setTimeout(function() {
+   $(".godzilla").slideUp();
+}, 4000);
+
+setTimeout(function() {
+   $(".godzilla").slideUp();
+}, 4000);
+
+
+setTimeout(function() {
+   $(".PSA").fadeIn();
+}, 4500);
+
+
+//fade in message that bambi is ok 
+
+		});
+
+})	
+
+</script>
+</head>
+
+<body>
+
+
+<div id="wrapper">
+    <div class="godzilla" style="background-image: url('images/godzilla.png');">
+    </div>
+  <div class="sicko" >
+
+  	YOU SICKO! 
+    </div>
+<div class="PSA" >
+
+  	 We are happy to note that Bambi was NOT hurt in the making of this demo.
+    </div>
+
+    <div class="bambi" style="background-image: url('images/bambi.jpg'); ">
+    </div>
+
+
+</div>
+
+
+<div id="button">DO IT </div>
+
+</body>
+
+</html>

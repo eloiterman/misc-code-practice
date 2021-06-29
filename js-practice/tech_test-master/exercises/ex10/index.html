@@ -1,0 +1,78 @@
+<!--
+Instructions:
+	- Write a javascript program that will rotate indefinitely between 3 images of your choice every 5 seconds.
+	Images have to fade in and out between rotations.
+
+Note:
+	- Only native Javascript and Jquery are allowed
+
+ -->
+<!--
+ I realized afterwards the solution asked for it to timed -rather than clicked. I can-make one that does that, -but I ran out of free time to do this over. Moving forward, if requested I can create another one.
+// athought process for alternate version
+
+to do:
+
+set first element visible hide others
+timed function to iterate display property to the next child or index and hide others
+when the last one either last-child or index value is displayed -reset to start settings -show first etc
+
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+.image{
+width:500px;
+height:500px;
+}
+
+</style>
+
+
+<script>
+$( document ).ready(function() {
+    var numItems = $('.image').length;
+
+//console.log(numItems);
+
+        $( ".image").click(function() {
+                var index = $(this).index()+1;
+                //console.log(index);
+                $(this).fadeOut().next().delay(500).fadeIn();
+
+                //start over
+                if (index===numItems){
+                    $( ".image:eq(0)" ).fadeIn(500);
+                    $(".image:not(:first-child)").hide();  
+                }
+
+        });
+
+})  
+
+</script>
+</head>
+
+<body>
+
+
+<div id="wrapper">
+
+    <div class="image" style="background-image: url('images/boba.jpg');">
+    </div>
+    <div class="image" style="background-image: url('images/solo.jpg');display:none ">
+    </div>
+    <div class="image" style="background-image: url('images/r2.jpg');display:none  ">
+    </div>
+
+</div>
+
+
+
+
+</body>
+
+</html>

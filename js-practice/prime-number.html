@@ -1,0 +1,36 @@
+<html>
+<head>
+<script>
+var input_num =prompt("enter a number and I'll tell you if it's prime");
+function isPrime(num) {
+	
+ for(var i = 2; i < num; i++)
+    if(num % i === 0) return false;
+  return num !== 1;
+
+}
+
+
+
+
+
+var result =isPrime(input_num);
+
+if(result){
+	alert("Prime");
+}else{
+	alert("Not Prime");
+}
+
+console.log(result);
+
+</script>
+
+</head>
+<body>
+here is some ok code
+
+</body>
+
+
+</htm>

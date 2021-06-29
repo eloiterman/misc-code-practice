@@ -1,0 +1,49 @@
+<!--
+Instructions:
+	- Complete the function randomPicker() to randomly select one property out of a given object, and append the name of the property to container #property and its value to container #value, within the DOM.
+
+Note:
+	- You can only use native Javascript
+
+ -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ex9</title>
+	</head>
+	<body>
+		<div id="property"></div>
+		<div id="value"></div>
+
+		<footer>
+//psudocode 
+ -getting the syntax right in vanilla js would be something to look up..
+but.. the thought process is like this:
+#1
+
+loop through the items
+get each one's id 
+put those ids into an array 
+pull one of them at random out of that array
+
+	#2 
+	a -count all of the objects
+	b -use the number of objects to generate a random number
+	c -use that number to grab the index number of that object
+
+
+
+			<script type="text/javascript">
+				function randomPicker(obj) {
+
+				}
+var divs = document.getElementsByTagName('div');
+var NumdDivlist = divs.length;
+var randomDivindex=Math.floor((Math.random() * NumdDivlist ) + 1);
+
+var x = document.getElementsByTagName('div')[NumdDivlist];
+			</script>
+		</footer>
+	</body>
+</html>
