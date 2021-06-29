@@ -13,3 +13,6 @@ coding practice -basic stuff
  -practice with objects and arrays 
  
  The "tech_test_master" was a take home test for a job that took me time to complete  for further reference and practice as needed. 
+
+ Test update here
+ 
