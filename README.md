@@ -14,6 +14,5 @@ coding practice -basic stuff
  
  The "tech_test_master" was a take home test for a job that took me time to complete  for further reference and practice as needed. 
 
--code update tes -will this show up in commit history?
-
+-code update test -will thsi show up? Do you want to play a game?
  
