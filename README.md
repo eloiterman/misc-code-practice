@@ -14,5 +14,6 @@ coding practice -basic stuff
  
  The "tech_test_master" was a take home test for a job that took me time to complete  for further reference and practice as needed. 
 
-adding some more copy here 1-2-3
+-code update tes -will this show up in commit history?
+
  
